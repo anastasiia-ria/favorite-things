@@ -23,4 +23,14 @@ $(document).ready(function() {
     
 
   });
+
+  let flavors = ["mint", "chocolate", "vanilla", "mudslide"];
+
+  flavors.forEach(function(flavorType) {
+    $("ul#ice-cream-list").append("<li>" + flavorType + "</li>");
+  });
+
+  
+
+
 });
