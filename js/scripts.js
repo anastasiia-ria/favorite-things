@@ -33,4 +33,27 @@ $(document).ready(function() {
   
 
 
+  $("form#groceryList").submit(function(event) {
+    event.preventDefault();
+
+    let groceryList = [];
+    
+    $('input').each(function() {
+      if ($(this).val() != "") {
+        groceryList.push($(this).val());
+      }
+    })
+    
+    groceryList = groceryList.sort();
+
+    groceryList.forEach(function(item) {
+      $("ul#grocery-list").append("<li>" + item.toUpperCase() + "</li>");
+    });
+    
+    $("form#groceryList").hide();
+    $("ul#grocery-list").show();
+
+  });
+
+
 });
